@@ -1,0 +1,9 @@
+{
+  "name": "dik-meme-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DIK meme coin character site",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

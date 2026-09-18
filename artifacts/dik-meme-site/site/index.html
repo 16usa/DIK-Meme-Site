@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070707" />
+  <meta name="description" content="DIK — one eggplant, too many situations." />
+  <meta property="og:title" content="DIK" />
+  <meta property="og:description" content="Purple. Unbothered. Everywhere." />
+  <meta property="og:image" content="assets/dik-drive.png" />
+  <title>DIK</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#top" aria-label="DIK home">DIK</a>
+    <nav class="nav">
+      <a href="#story">Story</a>
+      <a href="#life">Life</a>
+      <a href="#memes">Memes</a>
+    </nav>
+    <a class="pill pill-small" id="topBuy" href="#buy">Buy</a>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <img class="hero-media" src="assets/dik-drive.png" alt="DIK driving a sports car on the coast" />
+      <div class="hero-shade"></div>
+      <div class="hero-copy reveal">
+        <div class="eyebrow">THE PURPLE MAIN CHARACTER</div>
+        <h1>DIK</h1>
+        <p class="tagline" id="heroTagline">Purple. Unbothered. Everywhere.</p>
+        <p class="subline" id="heroSubline">Meet DIK — one eggplant, too many situations.</p>
+        <div class="hero-actions">
+          <a class="pill" id="pumpButton" href="#buy">BUY ON PUMP.FUN</a>
+          <button class="pill pill-ghost" id="copyButton" type="button">COPY CA</button>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#story" aria-label="Scroll to story">SCROLL <span>↓</span></a>
+    </section>
+
+    <section class="story section" id="story">
+      <div class="section-kicker">WHO IS DIK?</div>
+      <div class="story-grid">
+        <h2 class="reveal">He’s purple.<br>He goes places.<br>That’s enough.</h2>
+        <div class="story-copy reveal">
+          <p>DIK is an eggplant with main-character energy. One day he’s driving the coast. Next day he’s hitting a jackpot, waking up late, or throwing hands at the gym.</p>
+          <p>No lore bible. No fake destiny. Just DIK.</p>
+        </div>
+      </div>
+      <div class="portrait-card reveal tilt-card">
+        <img src="assets/dik-original.png" alt="DIK character portrait" loading="lazy" />
+        <span>ORIGINAL DIK</span>
+      </div>
+    </section>
+
+    <section class="life section" id="life">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">THE LIFE OF DIK</div>
+          <h2>Same DIK.<br>Different day.</h2>
+        </div>
+        <p>Swipe it. Meme it. Post it.</p>
+      </div>
+
+      <div class="life-track" id="lifeTrack">
+        <article class="scene-card">
+          <img src="assets/dik-casino.png" alt="DIK shocked at a casino jackpot" loading="lazy" />
+          <div class="scene-meta"><span>01</span><strong>JACKPOT DIK</strong><em>SHOCKED</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-morning.png" alt="Sleepy DIK waking up in a penthouse" loading="lazy" />
+          <div class="scene-meta"><span>02</span><strong>MORNING DIK</strong><em>NOT READY</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-gym.png" alt="Angry DIK training in the gym" loading="lazy" />
+          <div class="scene-meta"><span>03</span><strong>GYM DIK</strong><em>LOCKED IN</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-beach.png" alt="DIK relaxing at the beach" loading="lazy" />
+          <div class="scene-meta"><span>04</span><strong>BEACH DIK</strong><em>UNBOTHERED</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-penthouse.png" alt="DIK relaxing in a penthouse" loading="lazy" />
+          <div class="scene-meta"><span>05</span><strong>PENTHOUSE DIK</strong><em>OFF DUTY</em></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="meme-banner" id="memes">
+      <div class="meme-copy reveal">
+        <div class="section-kicker">MEME ENGINE</div>
+        <h2>Put DIK<br>anywhere.</h2>
+        <p>Cars. Casinos. Beaches. Space. Grocery stores. Monday mornings. The character stays. The face changes.</p>
+      </div>
+      <div class="meme-collage reveal">
+        <img src="assets/dik-drive.png" alt="DIK driving" loading="lazy" />
+        <img src="assets/dik-gym.png" alt="DIK at the gym" loading="lazy" />
+        <img src="assets/dik-morning.png" alt="DIK waking up" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="buy section" id="buy">
+      <div class="buy-panel reveal">
+        <div class="coin-mark">DIK</div>
+        <div>
+          <div class="section-kicker">ON SOLANA</div>
+          <h2>Find DIK<br>on Pump.fun.</h2>
+        </div>
+        <div class="buy-actions">
+          <a class="pill" id="pumpButtonBottom" href="#">OPEN PUMP.FUN</a>
+          <button class="contract" id="contractButton" type="button">
+            <span class="contract-label">CONTRACT</span>
+            <span class="contract-value" id="contractValue">PASTE CONTRACT ADDRESS</span>
+            <span class="contract-copy">COPY</span>
+          </button>
+          <div class="social-row">
+            <a id="xLink" href="#">X / TWITTER</a>
+            <a id="telegramLink" href="#">TELEGRAM</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">DIK</div>
+    <div class="footer-copy">A meme character on Solana. No promises. No utility claims. No financial guarantees.</div>
+    <div class="footer-year" id="year"></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied.</div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
