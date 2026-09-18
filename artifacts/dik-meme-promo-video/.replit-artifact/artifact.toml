@@ -1,0 +1,29 @@
+kind = "video"
+videoAspectRatio = "9:16"
+previewPath = "/dik-meme-promo-video/"
+title = "DIK Meme Promo"
+description = "A 10–15 second vertical cinematic promo for DIK, the purple meme character, using the project's existing character imagery and brand identity."
+version = "1.0.0"
+id = "artifacts/dik-meme-promo-video"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/dik-meme-promo-video/" ]
+localPort = 23935
+
+[services.development]
+run = "pnpm --filter @workspace/dik-meme-promo-video run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dik-meme-promo-video", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/dik-meme-promo-video/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23935"
+BASE_PATH = "/dik-meme-promo-video/"
