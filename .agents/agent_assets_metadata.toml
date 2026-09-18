@@ -1,0 +1,9 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "T4H0PlmPIyqnXG0pfqjTx"
+uri = "file://artifacts/dik-meme-promo-video/public/audio/bg_music.mp3"
+type = "audio"
+title = "DIK promo background music"
+description = "Generated music: Premium dark nu-disco instrumental background music scoring a 15-second vertical meme-luxury character promo. Glossy synth bass, crisp electronic drums, champagne-bright accents, 116…"
