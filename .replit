@@ -1,7 +1,7 @@
 modules = ["nodejs-24"]
 
 [deployment]
-router = "application"
+run = ["node", "artifacts/dik-meme-site/site/server.js"]
 deploymentTarget = "autoscale"
 
 [deployment.postBuild]
