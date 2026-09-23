@@ -13,9 +13,10 @@
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
+
   <header class="topbar" id="topbar">
     <a class="brand" href="#top" aria-label="DIK home">DIK</a>
-    <nav class="nav">
+    <nav class="nav" aria-label="Primary navigation">
       <a href="#story">Story</a>
       <a href="#life">Life</a>
       <a href="#memes">Memes</a>
@@ -23,8 +24,17 @@
     <a class="pill pill-small" id="topBuy" href="#buy">Buy</a>
   </header>
 
-  <main>
-    <section class="hero" id="top">
+  <nav class="slide-rail" id="slideRail" aria-label="Slide navigation">
+    <a class="active" href="#top" aria-label="Slide 1"><span></span></a>
+    <a href="#story" aria-label="Slide 2"><span></span></a>
+    <a href="#life" aria-label="Slide 3"><span></span></a>
+    <a href="#memes" aria-label="Slide 4"><span></span></a>
+    <a href="#buy" aria-label="Slide 5"><span></span></a>
+    <div class="slide-count"><strong id="slideCurrent">01</strong><span>/05</span></div>
+  </nav>
+
+  <main id="slides">
+    <section class="slide hero" id="top" data-theme="dark" data-slide="1">
       <img class="hero-media" src="assets/dik-drive.png" alt="DIK driving a sports car on the coast" />
       <div class="hero-shade"></div>
       <div class="hero-copy reveal">
@@ -37,98 +47,106 @@
           <button class="pill pill-ghost" id="copyButton" type="button">COPY CA</button>
         </div>
       </div>
-      <a class="scroll-hint" href="#story" aria-label="Scroll to story">SCROLL <span>↓</span></a>
+      <a class="swipe-hint" href="#story" aria-label="Next slide">SWIPE <span>↑</span></a>
     </section>
 
-    <section class="story section" id="story">
-      <div class="section-kicker">WHO IS DIK?</div>
-      <div class="story-grid">
-        <h2 class="reveal">He’s purple.<br>He goes places.<br>That’s enough.</h2>
-        <div class="story-copy reveal">
-          <p>DIK is an eggplant with main-character energy. One day he’s driving the coast. Next day he’s hitting a jackpot, waking up late, or throwing hands at the gym.</p>
-          <p>No lore bible. No fake destiny. Just DIK.</p>
-        </div>
-      </div>
-      <div class="portrait-card reveal tilt-card">
-        <img src="assets/dik-original.png" alt="DIK character portrait" loading="lazy" />
-        <span>ORIGINAL DIK</span>
-      </div>
-    </section>
-
-    <section class="life section" id="life">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">THE LIFE OF DIK</div>
-          <h2>Same DIK.<br>Different day.</h2>
-        </div>
-        <p>Swipe it. Meme it. Post it.</p>
-      </div>
-
-      <div class="life-track" id="lifeTrack">
-        <article class="scene-card">
-          <img src="assets/dik-casino.png" alt="DIK shocked at a casino jackpot" loading="lazy" />
-          <div class="scene-meta"><span>01</span><strong>JACKPOT DIK</strong><em>SHOCKED</em></div>
-        </article>
-        <article class="scene-card">
-          <img src="assets/dik-morning.png" alt="Sleepy DIK waking up in a penthouse" loading="lazy" />
-          <div class="scene-meta"><span>02</span><strong>MORNING DIK</strong><em>NOT READY</em></div>
-        </article>
-        <article class="scene-card">
-          <img src="assets/dik-gym.png" alt="Angry DIK training in the gym" loading="lazy" />
-          <div class="scene-meta"><span>03</span><strong>GYM DIK</strong><em>LOCKED IN</em></div>
-        </article>
-        <article class="scene-card">
-          <img src="assets/dik-beach.png" alt="DIK relaxing at the beach" loading="lazy" />
-          <div class="scene-meta"><span>04</span><strong>BEACH DIK</strong><em>UNBOTHERED</em></div>
-        </article>
-        <article class="scene-card">
-          <img src="assets/dik-penthouse.png" alt="DIK relaxing in a penthouse" loading="lazy" />
-          <div class="scene-meta"><span>05</span><strong>PENTHOUSE DIK</strong><em>OFF DUTY</em></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="meme-banner" id="memes">
-      <div class="meme-copy reveal">
-        <div class="section-kicker">MEME ENGINE</div>
-        <h2>Put DIK<br>anywhere.</h2>
-        <p>Cars. Casinos. Beaches. Space. Grocery stores. Monday mornings. The character stays. The face changes.</p>
-      </div>
-      <div class="meme-collage reveal">
-        <img src="assets/dik-drive.png" alt="DIK driving" loading="lazy" />
-        <img src="assets/dik-gym.png" alt="DIK at the gym" loading="lazy" />
-        <img src="assets/dik-morning.png" alt="DIK waking up" loading="lazy" />
-      </div>
-    </section>
-
-    <section class="buy section" id="buy">
-      <div class="buy-panel reveal">
-        <div class="coin-mark">DIK</div>
-        <div>
-          <div class="section-kicker">ON SOLANA</div>
-          <h2>Find DIK<br>on Pump.fun.</h2>
-        </div>
-        <div class="buy-actions">
-          <a class="pill" id="pumpButtonBottom" href="#">OPEN PUMP.FUN</a>
-          <button class="contract" id="contractButton" type="button">
-            <span class="contract-label">CONTRACT</span>
-            <span class="contract-value" id="contractValue">PASTE CONTRACT ADDRESS</span>
-            <span class="contract-copy">COPY</span>
-          </button>
-          <div class="social-row">
-            <a id="xLink" href="#">X / TWITTER</a>
-            <a id="telegramLink" href="#">TELEGRAM</a>
+    <section class="slide story" id="story" data-theme="dark" data-slide="2">
+      <div class="slide-inner story-layout">
+        <div class="story-text reveal">
+          <div class="section-kicker">WHO IS DIK?</div>
+          <h2>He’s purple.<br>He goes places.<br>That’s enough.</h2>
+          <div class="story-copy">
+            <p>DIK is an eggplant with main-character energy. One day he’s driving the coast. Next day he’s hitting a jackpot, waking up late, or throwing hands at the gym.</p>
+            <p>No lore bible. No fake destiny. Just DIK.</p>
           </div>
         </div>
+        <div class="portrait-card reveal tilt-card">
+          <img src="assets/dik-original.png" alt="DIK character portrait" loading="lazy" />
+          <span>ORIGINAL DIK</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide life" id="life" data-theme="dark" data-slide="3">
+      <div class="slide-inner life-layout">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">THE LIFE OF DIK</div>
+            <h2>Same DIK.<br>Different day.</h2>
+          </div>
+          <p>Swipe it. Meme it. Post it.</p>
+        </div>
+
+        <div class="life-track" id="lifeTrack">
+          <article class="scene-card">
+            <img src="assets/dik-casino.png" alt="DIK shocked at a casino jackpot" loading="lazy" />
+            <div class="scene-meta"><span>01</span><strong>JACKPOT DIK</strong><em>SHOCKED</em></div>
+          </article>
+          <article class="scene-card">
+            <img src="assets/dik-morning.png" alt="Sleepy DIK waking up in a penthouse" loading="lazy" />
+            <div class="scene-meta"><span>02</span><strong>MORNING DIK</strong><em>NOT READY</em></div>
+          </article>
+          <article class="scene-card">
+            <img src="assets/dik-gym.png" alt="Angry DIK training in the gym" loading="lazy" />
+            <div class="scene-meta"><span>03</span><strong>GYM DIK</strong><em>LOCKED IN</em></div>
+          </article>
+          <article class="scene-card">
+            <img src="assets/dik-beach.png" alt="DIK relaxing at the beach" loading="lazy" />
+            <div class="scene-meta"><span>04</span><strong>BEACH DIK</strong><em>UNBOTHERED</em></div>
+          </article>
+          <article class="scene-card">
+            <img src="assets/dik-penthouse.png" alt="DIK relaxing in a penthouse" loading="lazy" />
+            <div class="scene-meta"><span>05</span><strong>PENTHOUSE DIK</strong><em>OFF DUTY</em></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide meme-banner" id="memes" data-theme="light" data-slide="4">
+      <div class="slide-inner meme-layout">
+        <div class="meme-copy reveal">
+          <div class="section-kicker">MEME ENGINE</div>
+          <h2>Put DIK<br>anywhere.</h2>
+          <p>Cars. Casinos. Beaches. Space. Grocery stores. Monday mornings. The character stays. The face changes.</p>
+        </div>
+        <div class="meme-collage reveal">
+          <img src="assets/dik-drive.png" alt="DIK driving" loading="lazy" />
+          <img src="assets/dik-gym.png" alt="DIK at the gym" loading="lazy" />
+          <img src="assets/dik-morning.png" alt="DIK waking up" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="slide buy" id="buy" data-theme="dark" data-slide="5">
+      <div class="slide-inner buy-layout">
+        <div class="buy-panel reveal">
+          <div class="coin-mark">DIK</div>
+          <div class="buy-copy">
+            <div class="section-kicker">ON SOLANA</div>
+            <h2>Find DIK<br>on Pump.fun.</h2>
+          </div>
+          <div class="buy-actions">
+            <a class="pill" id="pumpButtonBottom" href="#">OPEN PUMP.FUN</a>
+            <button class="contract" id="contractButton" type="button">
+              <span class="contract-label">CONTRACT</span>
+              <span class="contract-value" id="contractValue">PASTE CONTRACT ADDRESS</span>
+              <span class="contract-copy">COPY</span>
+            </button>
+            <div class="social-row">
+              <a id="xLink" href="#">X / TWITTER</a>
+              <a id="telegramLink" href="#">TELEGRAM</a>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          <div class="footer-brand">DIK</div>
+          <div class="footer-copy">A meme character on Solana. No promises. No utility claims. No financial guarantees.</div>
+          <div class="footer-year" id="year"></div>
+        </footer>
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="footer-brand">DIK</div>
-    <div class="footer-copy">A meme character on Solana. No promises. No utility claims. No financial guarantees.</div>
-    <div class="footer-year" id="year"></div>
-  </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite">Copied.</div>
 
