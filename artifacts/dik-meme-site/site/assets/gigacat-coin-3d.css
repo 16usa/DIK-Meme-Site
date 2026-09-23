@@ -1,0 +1,218 @@
+/* GIGA CAT INTERACTIVE 3D COIN v17
+   Replaces only the existing circular avatar surface inside .coin-mark.
+   No external libraries. Touch/mouse/keyboard friendly. */
+
+.coin-mark {
+  width: 148px !important;
+  height: 148px !important;
+  flex: 0 0 148px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+.coin-mark::before,
+.coin-mark::after {
+  display: none !important;
+  content: none !important;
+}
+
+.coin-mark > img,
+.coin-mark > picture {
+  display: none !important;
+}
+
+.giga-coin3d {
+  --giga-coin-z: 7px;
+  --giga-shine-x: 32%;
+  --giga-shine-opacity: .34;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  perspective: 760px;
+  -webkit-perspective: 760px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  filter: drop-shadow(0 15px 18px rgba(0,0,0,.42));
+  contain: layout style;
+}
+
+.giga-coin3d:active { cursor: grabbing; }
+
+.giga-coin3d::after {
+  content: "";
+  position: absolute;
+  left: 17%;
+  right: 17%;
+  bottom: 4%;
+  height: 12%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(225,177,76,.28), rgba(0,0,0,0) 72%);
+  filter: blur(7px);
+  opacity: .58;
+  transform: translateZ(-30px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.giga-coin3d-object {
+  position: absolute;
+  inset: 5%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: rotateX(-8deg) rotateY(-18deg);
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.giga-coin3d-face,
+.giga-coin3d-edge-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.giga-coin3d-face {
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,236,181,.30),
+    inset 0 -10px 22px rgba(84,44,5,.20),
+    0 0 0 1px rgba(123,73,14,.28);
+}
+
+.giga-coin3d-front {
+  transform: translateZ(var(--giga-coin-z));
+}
+
+.giga-coin3d-back {
+  transform: rotateY(180deg) translateZ(var(--giga-coin-z));
+}
+
+.giga-coin3d-face img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: fill;
+  border-radius: 50%;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  transform: translateZ(.1px);
+}
+
+.giga-coin3d-face::after {
+  content: "";
+  position: absolute;
+  inset: 1.6%;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at var(--giga-shine-x) 26%, rgba(255,255,255,.44), transparent 18%),
+    linear-gradient(112deg, transparent 21%, rgba(255,242,194,.18) 42%, rgba(255,255,255,.36) 49%, rgba(255,220,137,.13) 57%, transparent 77%);
+  mix-blend-mode: screen;
+  opacity: var(--giga-shine-opacity);
+  transition: opacity .22s ease;
+}
+
+.giga-coin3d-edge-layer {
+  inset: 1.1%;
+  width: 97.8%;
+  height: 97.8%;
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      #6f3d0c 0deg 1.1deg,
+      #d89a35 1.1deg 2.1deg,
+      #f5cc70 2.1deg 3deg,
+      #8a4d10 3deg 4deg
+    );
+  box-shadow:
+    inset 0 0 0 2px rgba(255,225,151,.28),
+    inset 0 0 15px rgba(58,28,2,.54);
+  pointer-events: none;
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+}
+
+.giga-coin3d.is-dragging {
+  --giga-shine-opacity: .46;
+}
+
+.giga-coin3d:focus-visible::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px solid rgba(240,205,132,.48);
+  box-shadow: 0 0 0 3px rgba(240,205,132,.08);
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .coin-mark {
+    width: 136px !important;
+    height: 136px !important;
+    flex-basis: 136px !important;
+  }
+
+  .giga-coin3d {
+    perspective: 700px;
+    -webkit-perspective: 700px;
+  }
+}
+
+@media (max-width: 420px) {
+  .coin-mark {
+    width: 128px !important;
+    height: 128px !important;
+    flex-basis: 128px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .giga-coin3d-face::after { transition: none; }
+}
+
+
+/* GIGA CAT 3D COIN HOTFIX V18 */
+.coin-mark,
+.coin-mark > .giga-coin3d,
+.giga-coin3d,
+.giga-coin3d-object,
+.giga-coin3d-face {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.giga-coin3d {
+  filter: drop-shadow(0 14px 18px rgba(0,0,0,.28)) !important;
+}
+
+.giga-coin3d-object {
+  inset: 0 !important;
+}
+
+.giga-coin3d-face {
+  box-shadow:
+    inset 0 0 0 1px rgba(255,236,181,.26),
+    inset 0 -8px 18px rgba(84,44,5,.16),
+    0 0 0 1px rgba(123,73,14,.22) !important;
+}
+/* /GIGA CAT 3D COIN HOTFIX V18 */
