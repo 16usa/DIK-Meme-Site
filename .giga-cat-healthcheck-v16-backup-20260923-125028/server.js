@@ -21,17 +21,6 @@ const mime = {
 
 const server = http.createServer((req, res) => {
   let pathname = decodeURIComponent((req.url || '/').split('?')[0]);
-
-  // Replit deployment health checks may probe /api.
-  // Return a lightweight 200 so the deployment is considered healthy.
-  if (pathname === '/api' || pathname === '/health' || pathname === '/healthz') {
-    res.writeHead(200, {
-      'Content-Type': 'application/json; charset=utf-8',
-      'Cache-Control': 'no-store'
-    });
-    res.end(JSON.stringify({ ok: true, service: 'giga-cat' }));
-    return;
-  }
   if (pathname === '/') pathname = '/index.html';
   const safePath = path.normalize(pathname).replace(/^([.][.][/\\])+/, '');
   const filePath = path.join(root, safePath);
