@@ -818,6 +818,93 @@
   <link rel="stylesheet" href="assets/gigacat-hero-stack-v20.css?v=20" data-gigacat-hero-stack-v20="css" />
   <link rel="stylesheet" href="assets/gigacat-bottom-stats-v21.css?v=21" data-gigacat-bottom-stats-v21="css" />
   <link rel="stylesheet" href="assets/gigacat-coin-title-swap-v22.css?v=22" data-gigacat-coin-title-swap-v22="css" />
+
+
+<!-- GIGACAT_LIVE_LOVE_V21_CSS_START -->
+<style id="gigacat-live-love-v21-css">
+  .buy-panel.reveal > .giga-live-love {
+    position: absolute !important;
+    top: 24px !important;
+    right: 22px !important;
+    z-index: 50 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: rgba(255,255,255,.92) !important;
+    -webkit-tap-highlight-color: transparent !important;
+    cursor: pointer !important;
+    user-select: none !important;
+  }
+  .giga-live-love__heart {
+    width: 27px !important;
+    height: 27px !important;
+    display: block !important;
+    overflow: visible !important;
+    transform-origin: center !important;
+    filter: drop-shadow(0 3px 12px rgba(0,0,0,.28));
+  }
+  .giga-live-love__heart path {
+    fill: transparent !important;
+    stroke: currentColor !important;
+    stroke-width: 1.8 !important;
+    transition: fill .18s ease, stroke .18s ease !important;
+  }
+  .giga-live-love__count {
+    min-width: 14px !important;
+    color: #fff !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: -.02em !important;
+    text-align: left !important;
+    text-shadow: 0 3px 12px rgba(0,0,0,.34) !important;
+    font-variant-numeric: tabular-nums !important;
+  }
+  .giga-live-love.is-liked { color: #ff3b4f !important; }
+  .giga-live-love.is-liked .giga-live-love__heart path { fill: currentColor !important; }
+  .giga-live-love.is-buy-flash { color: #ff3b4f !important; }
+  .giga-live-love.is-buy-flash .giga-live-love__heart path { fill: currentColor !important; }
+  .giga-live-love.is-pop .giga-live-love__heart { animation: gigaLovePop .52s cubic-bezier(.2,.8,.2,1); }
+  .giga-live-love.is-buy-flash::before,
+  .giga-live-love.is-buy-flash::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 13px !important;
+    top: 13px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    transform: translate(-50%,-50%) scale(.35) !important;
+    border: 1px solid rgba(255,59,79,.72) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    animation: gigaLoveRing .75s ease-out !important;
+  }
+  .giga-live-love.is-buy-flash::after { animation-delay: .12s !important; }
+  @keyframes gigaLovePop {
+    0% { transform: scale(1); }
+    38% { transform: scale(1.34) rotate(-5deg); }
+    72% { transform: scale(.94) rotate(2deg); }
+    100% { transform: scale(1); }
+  }
+  @keyframes gigaLoveRing {
+    0% { opacity: .75; transform: translate(-50%,-50%) scale(.35); }
+    100% { opacity: 0; transform: translate(-50%,-50%) scale(1.22); }
+  }
+  @media (max-width: 520px) {
+    .buy-panel.reveal > .giga-live-love { top: 20px !important; right: 18px !important; gap: 7px !important; }
+    .giga-live-love__heart { width: 25px !important; height: 25px !important; }
+    .giga-live-love__count { font-size: 14px !important; }
+  }
+</style>
+<!-- GIGACAT_LIVE_LOVE_V21_CSS_END -->
+
 </head>
 <body>
   <!-- GIGA_BOTTOM_STATS_V21 -->
@@ -923,7 +1010,18 @@
 
     <section class="buy section" id="buy">
       <div class="buy-panel reveal" style="background:linear-gradient(rgba(7,7,7,.72),rgba(7,7,7,.90)),url('assets/giga-card-bg-space-v11.jpg') center/cover no-repeat;">
-          <div class="token-stats-row" id="tokenStatsRow" aria-label="token stats">
+
+<!-- GIGACAT_LIVE_LOVE_V21_BUTTON_START -->
+<button class="giga-live-love" id="gigaLiveLove" type="button" aria-label="Like GIGA CAT" aria-pressed="false">
+  <svg class="giga-live-love__heart" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 21s-7.05-4.42-9.45-8.08C.72 10.13 1.5 6.47 4.61 5.05c2.14-.98 4.43-.26 5.64 1.55C11.46 4.79 13.75 4.07 15.89 5.05c3.11 1.42 3.89 5.08 2.06 7.87C19.05 16.58 12 21 12 21Z" />
+  </svg>
+  <span class="giga-live-love__count" id="gigaLiveLoveCount">12</span>
+</button>
+<!-- GIGACAT_LIVE_LOVE_V21_BUTTON_END -->
+
+
+<div class="token-stats-row" id="tokenStatsRow" aria-label="token stats">
   <div class="token-stat token-stat-mc">
     <div class="token-stat-top">
       <span>MC</span>
@@ -1268,5 +1366,105 @@
 <!-- GIGA_STATS_SCRIPT_END -->
   <script src="assets/gigacat-coin-3d.js?v=17" defer data-giga-3dcoin-v17="script"></script>
   <script src="assets/gigacat-coin-title-swap-v22.js?v=22" defer data-gigacat-coin-title-swap-v22="js"></script>
+
+
+<!-- GIGACAT_LIVE_LOVE_V21_JS_START -->
+<script id="gigacat-live-love-v21-js">
+(() => {
+  const button = document.getElementById("gigaLiveLove");
+  const countEl = document.getElementById("gigaLiveLoveCount");
+  if (!button || !countEl) return;
+
+  let currentTotal = Number(countEl.textContent) || 12;
+  let likedByMe = false;
+  let busy = false;
+  let lastBuyFlashAt = 0;
+
+  const formatCount = (value) => {
+    const n = Number(value) || 0;
+    if (n < 1000) return String(n);
+    return new Intl.NumberFormat("en", {
+      notation: "compact",
+      maximumFractionDigits: n < 10000 ? 1 : 0
+    }).format(n);
+  };
+
+  const render = (data, reason = "sync") => {
+    const next = Number(data && data.total);
+    if (Number.isFinite(next)) {
+      const increased = next > currentTotal;
+      currentTotal = next;
+      countEl.textContent = formatCount(next);
+      if (reason === "buy" && increased) flashBuy();
+    }
+    if (typeof data?.likedByMe === "boolean") likedByMe = data.likedByMe;
+    button.classList.toggle("is-liked", likedByMe);
+    button.setAttribute("aria-pressed", likedByMe ? "true" : "false");
+  };
+
+  const pop = () => {
+    button.classList.remove("is-pop");
+    void button.offsetWidth;
+    button.classList.add("is-pop");
+    setTimeout(() => button.classList.remove("is-pop"), 560);
+  };
+
+  const flashBuy = () => {
+    const now = Date.now();
+    lastBuyFlashAt = now;
+    button.classList.add("is-buy-flash");
+    pop();
+    setTimeout(() => {
+      if (lastBuyFlashAt === now) button.classList.remove("is-buy-flash");
+    }, 900);
+  };
+
+  const load = async () => {
+    try {
+      const res = await fetch("/api/likes", { cache: "no-store", credentials: "same-origin" });
+      if (!res.ok) return;
+      render(await res.json(), "sync");
+    } catch (_) {}
+  };
+
+  button.addEventListener("click", async () => {
+    if (busy) return;
+    busy = true;
+    button.disabled = true;
+    try {
+      const res = await fetch("/api/likes/toggle", {
+        method: "POST",
+        credentials: "same-origin",
+        cache: "no-store",
+        headers: { "content-type": "application/json" },
+        body: "{}"
+      });
+      if (!res.ok) throw new Error("like request failed");
+      render(await res.json(), "manual");
+      pop();
+    } catch (_) {
+      await load();
+    } finally {
+      busy = false;
+      button.disabled = false;
+    }
+  });
+
+  try {
+    const events = new EventSource("/api/likes/events", { withCredentials: true });
+    events.addEventListener("likes", (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        render(data, data.reason || "sync");
+      } catch (_) {}
+    });
+  } catch (_) {}
+
+  load();
+  setInterval(load, 5000);
+})();
+</script>
+<!-- GIGACAT_LIVE_LOVE_V21_JS_END -->
+
 </body>
 </html>

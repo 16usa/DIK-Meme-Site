@@ -2,7 +2,7 @@ kind = "web"
 previewPath = "/"
 title = "GIGA CAT"
 description = "GIGA CAT landing page"
-version = "1.0.1"
+version = "1.0.3"
 id = "artifacts/dik-meme-site"
 router = "path"
 
@@ -15,7 +15,6 @@ localPort = 24391
 run = "pnpm --filter @workspace/dik-meme-site run dev"
 
 [services.production]
-build = [ "pnpm", "--filter", "@workspace/dik-meme-site", "run", "build" ]
 serve = "static"
 publicDir = "artifacts/dik-meme-site/site"
 
