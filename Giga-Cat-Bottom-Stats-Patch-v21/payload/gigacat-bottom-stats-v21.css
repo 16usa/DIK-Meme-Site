@@ -1,0 +1,150 @@
+/* GIGA CAT BOTTOM STATS v21
+   Move MC / HOLDERS to the bottom area, above the social links.
+   Left column: MC label + value above X/TWITTER.
+   Right column: holders icon + HOLDERS + value above DEXSCREENER.
+   Typography follows the social-link system; MC letters and holders icon/label stay gold.
+*/
+
+/* Keep the hero content in a deterministic vertical order. */
+.buy-panel,
+.buy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.coin-mark {
+  order: 20 !important;
+}
+
+.buy-panel h2,
+.buy h2 {
+  order: 30 !important;
+}
+
+.buy-actions {
+  order: 40 !important;
+  width: 100% !important;
+}
+
+/* Social row stays last; make it a 2-column alignment target. */
+.social-row {
+  order: 60 !important;
+  width: min(94%, 640px) !important;
+  margin-top: 8px !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: center !important;
+  justify-items: center !important;
+  column-gap: 18px !important;
+}
+
+.social-row > * {
+  width: auto !important;
+  justify-self: center !important;
+}
+
+/* Stats move down, just above the social row. */
+.token-stats-row {
+  order: 50 !important;
+  width: min(94%, 640px) !important;
+  max-width: 640px !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: end !important;
+  justify-items: center !important;
+  column-gap: 18px !important;
+  row-gap: 0 !important;
+  margin: 8px auto 6px !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+.token-stat {
+  width: 100% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 4px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Top labels use the same typographic system as the social links. */
+.token-stat-top {
+  min-height: 0 !important;
+  height: auto !important;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: rgba(243,221,175,.84) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  transform: none !important;
+  text-shadow: none !important;
+}
+
+.token-stat-icon {
+  display: inline-block !important;
+  width: 13px !important;
+  height: 13px !important;
+  margin: 0 !important;
+  color: rgba(243,221,175,.88) !important;
+  opacity: .95 !important;
+  transform: none !important;
+}
+
+/* The numeric values become subtle like the X/TWITTER / DEXSCREENER labels. */
+.token-stat-value {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: rgba(255,255,255,.78) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 1.12 !important;
+  letter-spacing: .16em !important;
+  text-transform: none !important;
+  text-shadow: none !important;
+}
+
+/* Keep MC short; make holders read as a small caption with icon. */
+.token-stat:first-child .token-stat-top {
+  letter-spacing: .20em !important;
+}
+
+.token-stat:nth-child(2) .token-stat-top::after {
+  content: "HOLDERS";
+  display: inline-block;
+}
+
+/* Neutralize the large top-hero emphasis from v20. */
+.token-stat:first-child .token-stat-value {
+  font-size: 11px !important;
+}
+
+@media (max-width: 520px) {
+  .token-stats-row,
+  .social-row {
+    width: 96% !important;
+    column-gap: 14px !important;
+  }
+
+  .token-stat-top,
+  .token-stat-value {
+    font-size: 10px !important;
+  }
+
+  .token-stat-icon {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
