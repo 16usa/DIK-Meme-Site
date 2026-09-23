@@ -1,0 +1,1080 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070707" />
+  <meta name="description" content="GIGA CAT — small cat, big power." />
+  <meta property="og:title" content="GIGA CAT" />
+  <meta property="og:description" content="Built different. Unbothered. Everywhere." />
+  <meta property="og:image" content="assets/dik-drive.png" />
+  <title>GIGA CAT</title>
+  <link rel="stylesheet" href="styles.css" />
+
+<!-- GIGA_GOLD_FULLSCREEN_OVERRIDES_START -->
+<style id="giga-gold-fullscreen-overrides">
+  html, body {
+    min-height: 100%;
+    background: #070707 !important;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .buy.section {
+    min-height: 100svh !important;
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    padding: 10px !important;
+    background: #070707 !important;
+  }
+
+  .buy.section .wrap {
+    width: 100% !important;
+    max-width: 760px !important;
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+  }
+
+  .buy-panel.reveal {
+    width: min(96vw, 740px) !important;
+    min-height: calc(100svh - 20px) !important;
+    margin: 0 auto !important;
+    border-radius: 34px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 32px !important;
+    position: relative !important;
+    isolation: isolate !important;
+    border: 1px solid rgba(255, 223, 157, 0.16) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 242, 214, 0.14),
+      0 24px 70px rgba(0, 0, 0, 0.46) !important;
+    background:
+      linear-gradient(180deg,
+        rgba(35, 21, 4, 0.18) 0%,
+        rgba(196, 144, 58, 0.18) 20%,
+        rgba(27, 17, 5, 0.12) 42%,
+        rgba(191, 132, 40, 0.20) 72%,
+        rgba(10, 8, 6, 0.80) 100%),
+      linear-gradient(135deg,
+        rgba(255, 242, 214, 0.16) 0%,
+        rgba(240, 188, 95, 0.22) 22%,
+        rgba(133, 88, 19, 0.28) 52%,
+        rgba(255, 214, 126, 0.10) 100%),
+      url('assets/giga-card-bg-space-v11.jpg') center center / cover no-repeat !important;
+  }
+
+  .buy-panel.reveal::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    background:
+      radial-gradient(circle at 20% 12%, rgba(255, 223, 150, 0.38), transparent 32%),
+      radial-gradient(circle at 80% 14%, rgba(255, 192, 93, 0.22), transparent 28%),
+      linear-gradient(180deg, rgba(255, 225, 170, 0.02), rgba(0,0,0,0.26));
+    pointer-events: none !important;
+  }
+
+  .buy-panel.reveal > * {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .buy-panel.reveal .section-kicker,
+  .buy-panel.reveal .mini-kicker,
+  .buy-panel.reveal .links a,
+  .buy-panel.reveal .copy-row,
+  .buy-panel.reveal .copy-action {
+    color: rgba(255, 237, 208, 0.88) !important;
+  }
+
+  .buy-panel.reveal .section-kicker {
+    letter-spacing: .18em !important;
+  }
+
+  .buy-panel.reveal h2 {
+    text-shadow: 0 8px 30px rgba(0,0,0,.36) !important;
+  }
+
+  .buy-panel.reveal .copy-shell {
+    background: rgba(20, 14, 9, 0.48) !important;
+    border-color: rgba(255, 224, 168, 0.18) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04) !important;
+  }
+
+  .buy-panel.reveal .pill,
+  .buy-panel.reveal .button,
+  .buy-panel.reveal .cta {
+    box-shadow: 0 8px 22px rgba(0,0,0,.22) !important;
+  }
+
+  @media (max-width: 760px) {
+    .buy.section {
+      padding: 0 !important;
+    }
+
+    .buy.section .wrap {
+      max-width: 100% !important;
+    }
+
+    .buy-panel.reveal {
+      width: 100vw !important;
+      min-height: 100svh !important;
+      border-radius: 0 !important;
+      padding: 28px 18px 22px !important;
+    }
+  }
+</style>
+<!-- GIGA_GOLD_FULLSCREEN_OVERRIDES_END -->
+
+<!-- GIGA_LOGO_ROW_OVERRIDES_START -->
+<style id="giga-logo-row-overrides">
+  .ecosystem-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 0 0 16px;
+  }
+
+  .ecosystem-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 236, 205, 0.16);
+    background: rgba(10, 10, 12, 0.22);
+    backdrop-filter: blur(12px);
+    color: rgba(255, 245, 232, 0.95);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+  }
+
+  .ecosystem-chip svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+  }
+
+  .ecosystem-chip:hover {
+    transform: translateY(-1px);
+  }
+
+  .ecosystem-chip-label {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 520px) {
+    .ecosystem-row {
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .ecosystem-chip {
+      min-height: 30px;
+      padding: 7px 10px;
+      font-size: 10px;
+      gap: 7px;
+    }
+    .ecosystem-chip svg {
+      width: 14px;
+      height: 14px;
+      flex-basis: 14px;
+    }
+  }
+</style>
+<!-- GIGA_LOGO_ROW_OVERRIDES_END -->
+<!-- GIGA_ICON_ONLY_OVERRIDES_START -->
+<style id="giga-icon-only-overrides">
+  .ecosystem-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 0 0 18px !important;
+  }
+
+  .ecosystem-chip {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    background: rgba(10,10,12,.28) !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04) !important;
+    overflow: hidden !important;
+  }
+
+  .ecosystem-chip svg {
+    width: 20px !important;
+    height: 20px !important;
+    flex: 0 0 20px !important;
+    display: block !important;
+  }
+
+  .ecosystem-chip-label {
+    display: none !important;
+  }
+
+  .ecosystem-chip:hover {
+    transform: translateY(-1px) !important;
+  }
+
+  @media (max-width: 520px) {
+    .ecosystem-row {
+      gap: 8px !important;
+    }
+    .ecosystem-chip {
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      min-height: 36px !important;
+      border-radius: 11px !important;
+    }
+    .ecosystem-chip svg {
+      width: 19px !important;
+      height: 19px !important;
+      flex-basis: 19px !important;
+    }
+  }
+</style>
+<!-- GIGA_ICON_ONLY_OVERRIDES_END -->
+<!-- GIGA_OFFICIAL_LOGOS_CENTER_START -->
+<style id="giga-official-logos-center">
+  .official-brand-row {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 24px !important;
+    margin: 0 auto 22px !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .brand-logo-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    overflow: visible !important;
+  }
+
+  .brand-logo-link:hover {
+    transform: translateY(-1px) scale(1.035) !important;
+  }
+
+  .brand-logo {
+    display: block !important;
+    width: auto !important;
+    object-fit: contain !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .brand-logo-solana {
+    height: 25px !important;
+  }
+
+  .brand-logo-pump {
+    height: 29px !important;
+  }
+
+  .brand-logo-dex {
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 6px !important;
+  }
+
+  .brand-logo-x {
+    height: 22px !important;
+    width: 22px !important;
+    filter: invert(1) !important;
+  }
+
+  /* Center the bottom X / TWITTER + DEXSCREENER links as one group. */
+  .social-row {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 34px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .social-row a {
+    text-align: center !important;
+  }
+
+  @media (max-width: 520px) {
+    .official-brand-row {
+      gap: 22px !important;
+      margin-bottom: 20px !important;
+    }
+
+    .brand-logo-solana {
+      height: 23px !important;
+    }
+
+    .brand-logo-pump {
+      height: 27px !important;
+    }
+
+    .brand-logo-dex {
+      width: 28px !important;
+      height: 28px !important;
+    }
+
+    .brand-logo-x {
+      width: 21px !important;
+      height: 21px !important;
+    }
+
+    .social-row {
+      gap: 28px !important;
+    }
+  }
+</style>
+<!-- GIGA_OFFICIAL_LOGOS_CENTER_END -->
+<!-- GIGA_STATS_OVERRIDES_START -->
+<style id="giga-stats-overrides">
+  .token-stats-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 34px;
+    margin: 2px auto 18px;
+    text-align: center;
+  }
+
+  .token-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
+    color: rgba(255,255,255,.98);
+  }
+
+  .token-stat-top {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 3px;
+    color: rgba(255,255,255,.72);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .14em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .token-stat-icon {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    flex: 0 0 15px;
+  }
+
+  .token-stat-value {
+    color: #fff;
+    font-weight: 1000;
+    letter-spacing: -.05em;
+    line-height: .95;
+    font-size: clamp(28px, 4.3vw, 44px);
+    text-shadow: 0 8px 22px rgba(0,0,0,.28);
+    white-space: nowrap;
+  }
+
+  .token-stat-value.loading {
+    opacity: .82;
+  }
+
+  @media (max-width: 520px) {
+    .token-stats-row {
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+
+    .token-stat {
+      min-width: 96px;
+    }
+
+    .token-stat-top {
+      font-size: 11px;
+      gap: 6px;
+    }
+
+    .token-stat-value {
+      font-size: clamp(26px, 8vw, 40px);
+    }
+  }
+</style>
+<!-- GIGA_STATS_OVERRIDES_END -->
+<!-- GIGA_TITLE_GOLD_AVATAR_V12_START -->
+<style id="giga-title-gold-avatar-v12">
+  /* Hide main open pump button if still present */
+  a[href*="pump.fun"].pill,
+  a[href*="pump.fun"].button,
+  a[href*="pump.fun"].cta,
+  #openPumpBtn,
+  #pumpLinkMain {
+    display: none !important;
+  }
+
+  /* Keep the main title centered and clean */
+  .buy-panel h2,
+  .buy-panel .title,
+  .buy-panel .hero-title {
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Gold gradient frame around the round avatar */
+  .coin-mark {
+    position: relative !important;
+    overflow: visible !important;
+    border-radius: 999px !important;
+    padding: 4px !important;
+    background:
+      linear-gradient(135deg,
+        rgba(255, 242, 206, 1) 0%,
+        rgba(236, 193, 95, 1) 22%,
+        rgba(164, 112, 28, 1) 52%,
+        rgba(255, 220, 142, 1) 76%,
+        rgba(255, 244, 214, 1) 100%) !important;
+    box-shadow:
+      0 8px 22px rgba(0,0,0,.28),
+      0 0 0 1px rgba(255, 233, 170, .55),
+      inset 0 1px 0 rgba(255,255,255,.55) !important;
+  }
+
+  .coin-mark img,
+  .coin-mark > div,
+  .coin-mark > picture,
+  .coin-mark > span {
+    border-radius: 999px !important;
+    overflow: hidden !important;
+    display: block !important;
+    background: #0a0a0c !important;
+  }
+
+  /* Make the avatar feel more premium */
+  .coin-mark::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 1px !important;
+    border-radius: 999px !important;
+    pointer-events: none !important;
+    box-shadow:
+      inset 0 1px 1px rgba(255,255,255,.26),
+      inset 0 -10px 20px rgba(0,0,0,.08) !important;
+  }
+
+  /* Ensure heading is visually prominent after removing extra words */
+  .buy-panel h2 {
+    letter-spacing: -.06em !important;
+    line-height: .9 !important;
+  }
+</style>
+<!-- GIGA_TITLE_GOLD_AVATAR_V12_END -->
+<!-- GIGA_PREMIUM_V13_START -->
+<style id="giga-premium-v13">
+  :root {
+    --giga-champagne: #E9C98D;
+    --giga-champagne-soft: #F3DDAF;
+    --giga-ink: #070707;
+  }
+
+  .buy-panel.reveal {
+    border: 1px solid rgba(233, 201, 141, .18) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.055),
+      inset 0 0 0 1px rgba(233,201,141,.025),
+      0 26px 80px rgba(0,0,0,.48) !important;
+  }
+
+  .buy-panel.reveal::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+    background:
+      radial-gradient(circle at 16% 7%, rgba(236,195,111,.15), transparent 28%),
+      radial-gradient(circle at 82% 26%, rgba(226,183,96,.06), transparent 30%),
+      linear-gradient(
+        180deg,
+        rgba(4,4,4,.34) 0%,
+        rgba(8,6,4,.20) 26%,
+        rgba(7,5,3,.31) 58%,
+        rgba(5,4,3,.72) 100%
+      ) !important;
+  }
+
+  .buy-panel.reveal > * {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .token-stats-row {
+    width: 100% !important;
+    max-width: 520px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: clamp(42px, 9vw, 84px) !important;
+    margin: 0 auto 24px !important;
+    text-align: center !important;
+  }
+
+  .token-stat {
+    min-width: 128px !important;
+    align-items: center !important;
+  }
+
+  .token-stat-top {
+    min-height: 16px !important;
+    margin-bottom: 7px !important;
+    color: rgba(243,221,175,.76) !important;
+    font-size: 10px !important;
+    font-weight: 850 !important;
+    letter-spacing: .18em !important;
+  }
+
+  .token-stat-icon {
+    width: 16px !important;
+    height: 16px !important;
+    color: rgba(243,221,175,.80) !important;
+  }
+
+  .token-stat-value {
+    color: rgba(255,255,255,.98) !important;
+    font-size: clamp(30px, 5.2vw, 42px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -.035em !important;
+    line-height: .92 !important;
+    text-shadow: 0 9px 28px rgba(0,0,0,.30) !important;
+  }
+
+  .coin-mark {
+    width: 126px !important;
+    height: 126px !important;
+    flex: 0 0 126px !important;
+    margin: 0 auto !important;
+    padding: 2px !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background:
+      linear-gradient(
+        135deg,
+        #8B642A 0%,
+        #F0D9A6 24%,
+        #B98B42 52%,
+        #F6E5BF 75%,
+        #8E662B 100%
+      ) !important;
+    box-shadow:
+      0 10px 28px rgba(0,0,0,.32),
+      0 0 0 1px rgba(236,207,148,.22) !important;
+  }
+
+  .coin-mark::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 2px !important;
+    border-radius: 50% !important;
+    pointer-events: none !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.28),
+      inset 0 0 0 1px rgba(0,0,0,.24) !important;
+  }
+
+  .coin-mark img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    display: block !important;
+  }
+
+  .official-brand-row,
+  .ecosystem-row {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 26px !important;
+    margin: 20px auto 18px !important;
+    padding: 0 !important;
+  }
+
+  .official-brand-row .brand-logo-link,
+  .ecosystem-row .brand-logo-link,
+  .ecosystem-row .ecosystem-chip {
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .official-brand-row .brand-logo,
+  .ecosystem-row .brand-logo,
+  .ecosystem-row svg {
+    filter: grayscale(1) brightness(0) invert(1) !important;
+    opacity: .88 !important;
+    box-shadow: none !important;
+  }
+
+  .official-brand-row .brand-logo-solana,
+  .official-brand-row .brand-logo-pump,
+  .official-brand-row .brand-logo-dex,
+  .official-brand-row .brand-logo-x {
+    max-width: 28px !important;
+    max-height: 28px !important;
+  }
+
+  .ecosystem-chip-label {
+    display: none !important;
+  }
+
+  .buy-panel h2,
+  .buy h2 {
+    width: 100% !important;
+    max-width: 640px !important;
+    margin: 6px auto 22px !important;
+    text-align: center !important;
+    color: #fff !important;
+    font-size: clamp(56px, 9vw, 82px) !important;
+    font-weight: 920 !important;
+    letter-spacing: -.055em !important;
+    line-height: .90 !important;
+    text-shadow: 0 11px 30px rgba(0,0,0,.30) !important;
+  }
+
+  .contract {
+    width: min(94%, 620px) !important;
+    min-height: 56px !important;
+    margin: 0 auto !important;
+    padding: 12px 18px !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(233,201,141,.12) !important;
+    background: rgba(7,7,7,.24) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.025) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+  }
+
+  .contract-value {
+    color: rgba(255,255,255,.70) !important;
+    font-size: 11px !important;
+    letter-spacing: .01em !important;
+  }
+
+  .contract-copy {
+    color: rgba(233,201,141,.78) !important;
+    font-size: 9px !important;
+    letter-spacing: .16em !important;
+  }
+
+  .social-row {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 28px !important;
+    margin: 17px auto 0 !important;
+    text-align: center !important;
+    font-size: 10px !important;
+    letter-spacing: .16em !important;
+    color: rgba(255,255,255,.58) !important;
+  }
+
+  .social-row a {
+    color: rgba(255,255,255,.58) !important;
+  }
+
+  .social-row a:hover {
+    color: rgba(243,221,175,.92) !important;
+  }
+
+  @media (max-width: 760px) {
+    .buy-panel.reveal {
+      padding: 26px 20px 24px !important;
+    }
+
+    .token-stats-row {
+      max-width: 440px !important;
+      gap: 40px !important;
+      margin-bottom: 23px !important;
+    }
+
+    .token-stat {
+      min-width: 116px !important;
+    }
+
+    .coin-mark {
+      width: 122px !important;
+      height: 122px !important;
+      flex-basis: 122px !important;
+    }
+
+    .official-brand-row,
+    .ecosystem-row {
+      gap: 24px !important;
+      margin-top: 19px !important;
+      margin-bottom: 18px !important;
+    }
+
+    .buy-panel h2,
+    .buy h2 {
+      font-size: clamp(54px, 14.5vw, 76px) !important;
+      margin-bottom: 21px !important;
+    }
+
+    .contract {
+      width: 96% !important;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .token-stats-row {
+      gap: 26px !important;
+    }
+
+    .token-stat {
+      min-width: 106px !important;
+    }
+
+    .token-stat-value {
+      font-size: 29px !important;
+    }
+
+    .coin-mark {
+      width: 116px !important;
+      height: 116px !important;
+      flex-basis: 116px !important;
+    }
+
+    .official-brand-row,
+    .ecosystem-row {
+      gap: 22px !important;
+    }
+
+    .buy-panel h2,
+    .buy h2 {
+      font-size: 55px !important;
+    }
+  }
+</style>
+<!-- GIGA_PREMIUM_V13_END -->
+</head>
+<body>
+  <!-- GIGA_PREMIUM_V13 -->
+  <!-- GIGA_TITLE_GOLD_AVATAR_V12 -->
+  <!-- GIGA_CARD_BACKGROUND_V11 -->
+  <!-- GIGA_STATS_V10 -->
+  <!-- GIGA_OFFICIAL_LOGOS_CENTER_V9 -->
+  <!-- GIGA_ICON_ONLY_V8 -->
+  <!-- GIGA_LOGO_ROW_V7 -->
+  <!-- GIGA_CAT_CARD_ONLY_MODE_V4 -->
+  <!-- GIGA_CAT_MINIMAL_MODE_V3 -->
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar" id="topbar" style="display:none !important;">
+    <a class="brand" href="#top" aria-label="GIGA CAT home">GIGA CAT</a>
+    <nav class="nav" hidden>
+      <a href="#story">Story</a>
+      <a href="#life">Life</a>
+      <a href="#memes">Memes</a>
+    </nav>
+    <a class="pill pill-small" id="topBuy" href="#buy">Buy</a>
+  </header>
+
+  <main>
+    <section class="hero" id="top" hidden style="display:none !important;">
+      <img class="hero-media" src="assets/dik-drive.png" alt="GIGA CAT, the muscular orange and white cat" />
+      <div class="hero-shade"></div>
+      <div class="hero-copy reveal">
+        <div class="eyebrow">THE STRONGEST CAT ON SOLANA</div>
+        <h1>GIGA</h1>
+        <p class="tagline" id="heroTagline">Small cat. Big power.</p>
+        <p class="subline" id="heroSubline">Meet GIGA CAT — built different and impossible to ignore.</p>
+        <div class="hero-actions">
+          <a class="pill" id="pumpButton" href="#buy">BUY ON PUMP.FUN</a>
+          <button class="pill pill-ghost" id="copyButton" type="button">COPY CA</button>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#story" aria-label="Scroll to story">SCROLL <span>↓</span></a>
+    </section>
+
+    <section class="story section" id="story" hidden style="display:none !important;">
+      <div class="section-kicker">WHO IS GIGA CAT?</div>
+      <div class="story-grid">
+        <h2 class="reveal">He’s calm.<br>He’s huge.<br>That’s enough.</h2>
+        <div class="story-copy reveal">
+          <p>GIGA CAT is the cat that skipped cute and went straight to maximum power. Heavy paws. Zero fear. Main-character energy everywhere he goes.</p>
+          <p>No complicated lore. No fake destiny. Just a cat built different.</p>
+        </div>
+      </div>
+      <div class="portrait-card reveal tilt-card">
+        <img src="assets/dik-original.png" alt="GIGA CAT character portrait" loading="lazy" />
+        <span>ORIGINAL GIGA CAT</span>
+      </div>
+    </section>
+
+    <section class="life section" id="life" hidden style="display:none !important;">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">THE LIFE OF GIGA CAT</div>
+          <h2>Same cat.<br>More power.</h2>
+        </div>
+        <p>Swipe it. Meme it. Post it.</p>
+      </div>
+
+      <div class="life-track" id="lifeTrack">
+        <article class="scene-card">
+          <img src="assets/dik-casino.png" alt="GIGA CAT sitting like a king on a throne" loading="lazy" />
+          <div class="scene-meta"><span>01</span><strong>KING GIGA</strong><em>ON TOP</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-morning.png" alt="GIGA CAT in a trading command center" loading="lazy" />
+          <div class="scene-meta"><span>02</span><strong>TRADER GIGA</strong><em>LOCKED IN</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-gym.png" alt="GIGA CAT flexing in the gym" loading="lazy" />
+          <div class="scene-meta"><span>03</span><strong>GYM GIGA</strong><em>BUILT DIFFERENT</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-beach.png" alt="GIGA CAT walking through the city at night" loading="lazy" />
+          <div class="scene-meta"><span>04</span><strong>STREET GIGA</strong><em>NO FEAR</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-penthouse.png" alt="GIGA CAT standing powerful and unbothered" loading="lazy" />
+          <div class="scene-meta"><span>05</span><strong>BOSS GIGA</strong><em>UNBOTHERED</em></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="meme-banner" id="memes" hidden style="display:none !important;">
+      <div class="meme-copy reveal">
+        <div class="section-kicker">MEME ENGINE</div>
+        <h2>Put GIGA CAT<br>anywhere.</h2>
+        <p>Gyms. Markets. Streets. Cars. Space. Monday mornings. Same face. Same power.</p>
+      </div>
+      <div class="meme-collage reveal">
+        <img src="assets/dik-drive.png" alt="GIGA CAT in the city" loading="lazy" />
+        <img src="assets/dik-gym.png" alt="GIGA CAT at the gym" loading="lazy" />
+        <img src="assets/dik-morning.png" alt="GIGA CAT trading" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="buy section" id="buy">
+      <div class="buy-panel reveal" style="background:linear-gradient(rgba(7,7,7,.72),rgba(7,7,7,.90)),url('assets/giga-card-bg-space-v11.jpg') center/cover no-repeat;">
+          <div class="token-stats-row" id="tokenStatsRow" aria-label="token stats">
+  <div class="token-stat token-stat-mc">
+    <div class="token-stat-top">
+      <span>MC</span>
+    </div>
+    <div class="token-stat-value loading" id="marketCapValue">$--</div>
+  </div>
+
+  <div class="token-stat token-stat-holders">
+    <div class="token-stat-top">
+      <svg class="token-stat-icon" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M9 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm6 1a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-6 2c-3.33 0-6 1.34-6 3v1h12v-1c0-1.66-2.67-3-6-3Zm6.6.17A7.73 7.73 0 0 1 18 17v1h3v-.8c0-1.19-1.78-2.24-4.4-2.83Z"/>
+      </svg>
+    </div>
+    <div class="token-stat-value loading" id="holdersValue">--</div>
+  </div>
+</div>
+        <div class="coin-mark" style="overflow:hidden;padding:0;background:#0b0b0d;"><img src="assets/giga-original-photo.jpg" alt="GIGA CAT original photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" /></div>
+        <div>
+          <div class="ecosystem-row official-brand-row" aria-label="ecosystem links">
+  <a class="brand-logo-link solana-logo-link"
+     href="https://solana.com"
+     target="_blank" rel="noreferrer"
+     aria-label="Solana">
+    <img src="https://solana.com/src/img/branding/solanaLogoMark.svg"
+         alt="Solana" class="brand-logo brand-logo-solana" />
+  </a>
+
+  <a class="brand-logo-link pump-logo-link"
+     href="https://pump.fun/coin/2jcvq8QcJ8TzEYJKYMCjR61kXVSzib4mEkz89tQxpump"
+     target="_blank" rel="noreferrer"
+     aria-label="Pump.fun">
+    <img src="https://pump.fun/pump-logomark.svg"
+         alt="Pump.fun" class="brand-logo brand-logo-pump" />
+  </a>
+
+  <a class="brand-logo-link dex-logo-link"
+     href="https://dexscreener.com/solana/72tZoSAHAutvD7dP2fNC56aASLxbPXro9jBPohZ8aAvY"
+     target="_blank" rel="noreferrer"
+     aria-label="DexScreener">
+    <img src="https://github.com/dexscreener.png?size=128"
+         alt="DexScreener" class="brand-logo brand-logo-dex" />
+  </a>
+
+  <a class="brand-logo-link x-logo-link"
+     href="https://x.com/i/communities/2039446188739489972"
+     target="_blank" rel="noreferrer"
+     aria-label="X">
+    <img src="https://about.x.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png"
+         alt="X" class="brand-logo brand-logo-x" />
+  </a>
+</div>
+          <h2>$GigaCat</h2>
+        </div>
+        <div class="buy-actions">
+          <div style="display:none !important;"><a class="pill" id="pumpButtonBottom" href="#">OPEN PUMP.FUN</a></div>
+          <button class="contract" id="contractButton" type="button">
+            <span class="contract-label">CONTRACT</span>
+            <span class="contract-value" id="contractValue">PASTE CONTRACT ADDRESS</span>
+            <span class="contract-copy">COPY</span>
+          </button>
+          <div class="social-row">
+            <a id="xLink" href="#">X / TWITTER</a>
+            <a id="dexLink" href="#">DEXSCREENER</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer hidden style="display:none !important;">
+    <div class="footer-brand">GIGA CAT</div>
+    <div class="footer-copy">A meme character on Solana. No promises. No utility claims. No financial guarantees.</div>
+    <div class="footer-year" id="year"></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied.</div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+<!-- GIGA_STATS_SCRIPT_START -->
+<script id="giga-stats-script">
+(function () {
+  const mint = "2jcvq8QcJ8TzEYJKYMCjR61kXVSzib4mEkz89tQxpump";
+  const pairAddress = "72tZoSAHAutvD7dP2fNC56aASLxbPXro9jBPohZ8aAvY";
+
+  const mcEl = document.getElementById("marketCapValue");
+  const holdersEl = document.getElementById("holdersValue");
+  if (!mcEl || !holdersEl) return;
+
+  function compactNumber(value) {
+    const n = Number(value);
+    if (!Number.isFinite(n) || n <= 0) return "--";
+    return new Intl.NumberFormat("en", {
+      notation: "compact",
+      maximumFractionDigits: 2
+    }).format(n);
+  }
+
+  function setMarketCap(value) {
+    mcEl.textContent = value;
+    mcEl.classList.remove("loading");
+  }
+
+  function setHolders(value) {
+    holdersEl.textContent = value;
+    holdersEl.classList.remove("loading");
+  }
+
+  async function fetchMarketCap() {
+    try {
+      const res = await fetch("https://api.dexscreener.com/latest/dex/pairs/solana/" + pairAddress, { cache: "no-store" });
+      if (!res.ok) throw new Error("dex request failed");
+      const data = await res.json();
+      const pair = (data && (data.pair || (Array.isArray(data.pairs) ? data.pairs[0] : null))) || null;
+      const mc = pair && (pair.marketCap || pair.fdv || pair.fdvUsd || pair.liquidity && pair.liquidity.usd);
+      setMarketCap("$" + compactNumber(mc));
+    } catch (e) {
+      setMarketCap("$--");
+    }
+  }
+
+  async function fetchHolders() {
+    const sources = [
+      "https://public-api.solscan.io/token/meta?tokenAddress=" + mint,
+      "https://public-api.solscan.io/token/holders?tokenAddress=" + mint + "&offset=0&limit=1"
+    ];
+
+    for (const url of sources) {
+      try {
+        const res = await fetch(url, {
+          cache: "no-store",
+          headers: { "accept": "application/json" }
+        });
+        if (!res.ok) continue;
+        const data = await res.json();
+
+        const candidates = [
+          data && data.holder,
+          data && data.holders,
+          data && data.holder_count,
+          data && data.holderCount,
+          data && data.total
+        ].filter(Boolean);
+
+        if (candidates.length) {
+          setHolders(compactNumber(candidates[0]));
+          return;
+        }
+      } catch (e) {}
+    }
+
+    setHolders("--");
+  }
+
+  fetchMarketCap();
+  fetchHolders();
+})();
+</script>
+<!-- GIGA_STATS_SCRIPT_END -->
+</body>
+</html>

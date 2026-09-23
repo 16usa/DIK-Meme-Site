@@ -1,10 +1,11 @@
 window.DIK_CONFIG = {
-  tokenName: "DIK",
-  ticker: "$DIK",
-  contractAddress: "PASTE_CONTRACT_ADDRESS_HERE",
-  pumpUrl: "PASTE_PUMP_FUN_URL_HERE",
-  xUrl: "PASTE_X_URL_HERE",
+  tokenName: "GIGA CAT",
+  ticker: "$GIGA",
+  contractAddress: "2jcvq8QcJ8TzEYJKYMCjR61kXVSzib4mEkz89tQxpump",
+  pumpUrl: "https://pump.fun/coin/2jcvq8QcJ8TzEYJKYMCjR61kXVSzib4mEkz89tQxpump",
+  xUrl: "https://x.com/i/communities/2039446188739489972",
+  dexUrl: "https://dexscreener.com/solana/72tZoSAHAutvD7dP2fNC56aASLxbPXro9jBPohZ8aAvY",
   telegramUrl: "",
-  heroTagline: "Purple. Unbothered. Everywhere.",
-  heroSubline: "Meet DIK — one eggplant, too many situations."
+  heroTagline: "Small cat. Big power.",
+  heroSubline: "Meet GIGA CAT — built different and impossible to ignore."
 };

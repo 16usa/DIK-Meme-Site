@@ -3,13 +3,13 @@
   const $ = (id) => document.getElementById(id);
   const isPlaceholder = (value) => !value || /PASTE_|YOUR_|HERE/i.test(value);
 
-  document.title = cfg.tokenName || 'DIK';
-  if ($('heroTagline')) $('heroTagline').textContent = cfg.heroTagline || 'Purple. Unbothered. Everywhere.';
-  if ($('heroSubline')) $('heroSubline').textContent = cfg.heroSubline || 'Meet DIK — one eggplant, too many situations.';
-  if ($('year')) $('year').textContent = `© ${new Date().getFullYear()} DIK`;
+  document.title = cfg.tokenName || 'GIGA CAT';
+  $('heroTagline').textContent = cfg.heroTagline || 'Small cat. Big power.';
+  $('heroSubline').textContent = cfg.heroSubline || 'Meet GIGA CAT — built different and impossible to ignore.';
+  $('year').textContent = `© ${new Date().getFullYear()} GIGA CAT`;
 
   const contract = cfg.contractAddress || '';
-  if ($('contractValue')) $('contractValue').textContent = isPlaceholder(contract) ? 'PASTE CONTRACT ADDRESS' : contract;
+  $('contractValue').textContent = isPlaceholder(contract) ? 'PASTE CONTRACT ADDRESS' : contract;
 
   function bindExternal(id, url) {
     const el = $(id);
@@ -29,12 +29,11 @@
   bindExternal('pumpButtonBottom', cfg.pumpUrl);
   bindExternal('topBuy', cfg.pumpUrl);
   bindExternal('xLink', cfg.xUrl);
-  bindExternal('telegramLink', cfg.telegramUrl);
+  bindExternal('dexLink', cfg.dexUrl);
 
   const toast = $('toast');
   let toastTimer;
   function showToast(message) {
-    if (!toast) return;
     toast.textContent = message;
     toast.classList.add('show');
     clearTimeout(toastTimer);
@@ -60,69 +59,35 @@
     }
   }
 
-  if ($('copyButton')) $('copyButton').addEventListener('click', copyContract);
-  if ($('contractButton')) $('contractButton').addEventListener('click', copyContract);
+  $('copyButton').addEventListener('click', copyContract);
+  $('contractButton').addEventListener('click', copyContract);
 
   const topbar = $('topbar');
-  const rail = $('slideRail');
-  const current = $('slideCurrent');
-  const slides = Array.from(document.querySelectorAll('.slide[data-slide]'));
-  const dots = rail ? Array.from(rail.querySelectorAll('a')) : [];
-  let activeIndex = 0;
-
-  function setActiveSlide(index) {
-    if (index < 0 || index >= slides.length || index === activeIndex && document.documentElement.dataset.slideReady) return;
-    activeIndex = index;
-    document.documentElement.dataset.slideReady = '1';
-    const slide = slides[index];
-    const onLight = slide.dataset.theme === 'light';
-
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-      if (i === index) dot.setAttribute('aria-current', 'true');
-      else dot.removeAttribute('aria-current');
-    });
-
-    if (current) current.textContent = String(index + 1).padStart(2, '0');
-    if (topbar) {
-      topbar.classList.toggle('on-light', onLight);
-      topbar.classList.toggle('scrolled', index !== 0 || window.scrollY > 18);
-    }
-    if (rail) rail.classList.toggle('on-light', onLight);
-
-    const theme = document.querySelector('meta[name="theme-color"]');
-    if (theme) theme.setAttribute('content', onLight ? '#f0f0ec' : '#070707');
-  }
-
-  setActiveSlide(0);
-
-  const slideObserver = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (!visible || visible.intersectionRatio < 0.45) return;
-    const index = slides.indexOf(visible.target);
-    if (index !== -1) setActiveSlide(index);
-  }, { threshold: [0.45, 0.6, 0.75] });
-
-  slides.forEach((slide) => slideObserver.observe(slide));
-
-  let scrollRaf = null;
+  const heroMedia = document.querySelector('.hero-media');
+  let raf = null;
   function onScroll() {
-    if (scrollRaf) return;
-    scrollRaf = requestAnimationFrame(() => {
-      if (topbar && activeIndex === 0) topbar.classList.toggle('scrolled', window.scrollY > 18);
-      scrollRaf = null;
+    if (raf) return;
+    raf = requestAnimationFrame(() => {
+      const y = window.scrollY;
+      topbar.classList.toggle('scrolled', y > 20);
+      if (heroMedia && y < window.innerHeight * 1.05) {
+        heroMedia.style.transform = `scale(1.015) translateY(${y * 0.09}px)`;
+      }
+      raf = null;
     });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-  const revealObserver = new IntersectionObserver((entries) => {
+  const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
     });
-  }, { threshold: 0.16 });
-  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
   const tilt = document.querySelector('.tilt-card');
   if (tilt && matchMedia('(pointer:fine)').matches) {
@@ -132,16 +97,6 @@
       const y = (e.clientY - r.top) / r.height - .5;
       tilt.style.transform = `perspective(1100px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg)`;
     });
-    tilt.addEventListener('mouseleave', () => { tilt.style.transform = ''; });
+    tilt.addEventListener('mouseleave', () => tilt.style.transform = '');
   }
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && e.key !== 'PageDown' && e.key !== 'PageUp') return;
-    if (document.activeElement && /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
-    const direction = e.key === 'ArrowUp' || e.key === 'PageUp' ? -1 : 1;
-    const next = Math.max(0, Math.min(slides.length - 1, activeIndex + direction));
-    if (next === activeIndex) return;
-    e.preventDefault();
-    slides[next].scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
 })();

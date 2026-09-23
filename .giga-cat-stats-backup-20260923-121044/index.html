@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070707" />
+  <meta name="description" content="GIGA CAT — small cat, big power." />
+  <meta property="og:title" content="GIGA CAT" />
+  <meta property="og:description" content="Built different. Unbothered. Everywhere." />
+  <meta property="og:image" content="assets/dik-drive.png" />
+  <title>GIGA CAT</title>
+  <link rel="stylesheet" href="styles.css" />
+
+<!-- GIGA_GOLD_FULLSCREEN_OVERRIDES_START -->
+<style id="giga-gold-fullscreen-overrides">
+  html, body {
+    min-height: 100%;
+    background: #070707 !important;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .buy.section {
+    min-height: 100svh !important;
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    padding: 10px !important;
+    background: #070707 !important;
+  }
+
+  .buy.section .wrap {
+    width: 100% !important;
+    max-width: 760px !important;
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+  }
+
+  .buy-panel.reveal {
+    width: min(96vw, 740px) !important;
+    min-height: calc(100svh - 20px) !important;
+    margin: 0 auto !important;
+    border-radius: 34px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 32px !important;
+    position: relative !important;
+    isolation: isolate !important;
+    border: 1px solid rgba(255, 223, 157, 0.16) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 242, 214, 0.14),
+      0 24px 70px rgba(0, 0, 0, 0.46) !important;
+    background:
+      linear-gradient(180deg,
+        rgba(35, 21, 4, 0.18) 0%,
+        rgba(196, 144, 58, 0.18) 20%,
+        rgba(27, 17, 5, 0.12) 42%,
+        rgba(191, 132, 40, 0.20) 72%,
+        rgba(10, 8, 6, 0.80) 100%),
+      linear-gradient(135deg,
+        rgba(255, 242, 214, 0.16) 0%,
+        rgba(240, 188, 95, 0.22) 22%,
+        rgba(133, 88, 19, 0.28) 52%,
+        rgba(255, 214, 126, 0.10) 100%),
+      url('assets/dik-original.png') center center / cover no-repeat !important;
+  }
+
+  .buy-panel.reveal::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    background:
+      radial-gradient(circle at 20% 12%, rgba(255, 223, 150, 0.38), transparent 32%),
+      radial-gradient(circle at 80% 14%, rgba(255, 192, 93, 0.22), transparent 28%),
+      linear-gradient(180deg, rgba(255, 225, 170, 0.02), rgba(0,0,0,0.26));
+    pointer-events: none !important;
+  }
+
+  .buy-panel.reveal > * {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .buy-panel.reveal .section-kicker,
+  .buy-panel.reveal .mini-kicker,
+  .buy-panel.reveal .links a,
+  .buy-panel.reveal .copy-row,
+  .buy-panel.reveal .copy-action {
+    color: rgba(255, 237, 208, 0.88) !important;
+  }
+
+  .buy-panel.reveal .section-kicker {
+    letter-spacing: .18em !important;
+  }
+
+  .buy-panel.reveal h2 {
+    text-shadow: 0 8px 30px rgba(0,0,0,.36) !important;
+  }
+
+  .buy-panel.reveal .copy-shell {
+    background: rgba(20, 14, 9, 0.48) !important;
+    border-color: rgba(255, 224, 168, 0.18) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04) !important;
+  }
+
+  .buy-panel.reveal .pill,
+  .buy-panel.reveal .button,
+  .buy-panel.reveal .cta {
+    box-shadow: 0 8px 22px rgba(0,0,0,.22) !important;
+  }
+
+  @media (max-width: 760px) {
+    .buy.section {
+      padding: 0 !important;
+    }
+
+    .buy.section .wrap {
+      max-width: 100% !important;
+    }
+
+    .buy-panel.reveal {
+      width: 100vw !important;
+      min-height: 100svh !important;
+      border-radius: 0 !important;
+      padding: 28px 18px 22px !important;
+    }
+  }
+</style>
+<!-- GIGA_GOLD_FULLSCREEN_OVERRIDES_END -->
+
+<!-- GIGA_LOGO_ROW_OVERRIDES_START -->
+<style id="giga-logo-row-overrides">
+  .ecosystem-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 0 0 16px;
+  }
+
+  .ecosystem-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 236, 205, 0.16);
+    background: rgba(10, 10, 12, 0.22);
+    backdrop-filter: blur(12px);
+    color: rgba(255, 245, 232, 0.95);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+  }
+
+  .ecosystem-chip svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+  }
+
+  .ecosystem-chip:hover {
+    transform: translateY(-1px);
+  }
+
+  .ecosystem-chip-label {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 520px) {
+    .ecosystem-row {
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .ecosystem-chip {
+      min-height: 30px;
+      padding: 7px 10px;
+      font-size: 10px;
+      gap: 7px;
+    }
+    .ecosystem-chip svg {
+      width: 14px;
+      height: 14px;
+      flex-basis: 14px;
+    }
+  }
+</style>
+<!-- GIGA_LOGO_ROW_OVERRIDES_END -->
+<!-- GIGA_ICON_ONLY_OVERRIDES_START -->
+<style id="giga-icon-only-overrides">
+  .ecosystem-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 0 0 18px !important;
+  }
+
+  .ecosystem-chip {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    background: rgba(10,10,12,.28) !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04) !important;
+    overflow: hidden !important;
+  }
+
+  .ecosystem-chip svg {
+    width: 20px !important;
+    height: 20px !important;
+    flex: 0 0 20px !important;
+    display: block !important;
+  }
+
+  .ecosystem-chip-label {
+    display: none !important;
+  }
+
+  .ecosystem-chip:hover {
+    transform: translateY(-1px) !important;
+  }
+
+  @media (max-width: 520px) {
+    .ecosystem-row {
+      gap: 8px !important;
+    }
+    .ecosystem-chip {
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      min-height: 36px !important;
+      border-radius: 11px !important;
+    }
+    .ecosystem-chip svg {
+      width: 19px !important;
+      height: 19px !important;
+      flex-basis: 19px !important;
+    }
+  }
+</style>
+<!-- GIGA_ICON_ONLY_OVERRIDES_END -->
+<!-- GIGA_OFFICIAL_LOGOS_CENTER_START -->
+<style id="giga-official-logos-center">
+  .official-brand-row {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 24px !important;
+    margin: 0 auto 22px !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .brand-logo-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    overflow: visible !important;
+  }
+
+  .brand-logo-link:hover {
+    transform: translateY(-1px) scale(1.035) !important;
+  }
+
+  .brand-logo {
+    display: block !important;
+    width: auto !important;
+    object-fit: contain !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .brand-logo-solana {
+    height: 25px !important;
+  }
+
+  .brand-logo-pump {
+    height: 29px !important;
+  }
+
+  .brand-logo-dex {
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 6px !important;
+  }
+
+  .brand-logo-x {
+    height: 22px !important;
+    width: 22px !important;
+    filter: invert(1) !important;
+  }
+
+  /* Center the bottom X / TWITTER + DEXSCREENER links as one group. */
+  .social-row {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 34px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .social-row a {
+    text-align: center !important;
+  }
+
+  @media (max-width: 520px) {
+    .official-brand-row {
+      gap: 22px !important;
+      margin-bottom: 20px !important;
+    }
+
+    .brand-logo-solana {
+      height: 23px !important;
+    }
+
+    .brand-logo-pump {
+      height: 27px !important;
+    }
+
+    .brand-logo-dex {
+      width: 28px !important;
+      height: 28px !important;
+    }
+
+    .brand-logo-x {
+      width: 21px !important;
+      height: 21px !important;
+    }
+
+    .social-row {
+      gap: 28px !important;
+    }
+  }
+</style>
+<!-- GIGA_OFFICIAL_LOGOS_CENTER_END -->
+</head>
+<body>
+  <!-- GIGA_OFFICIAL_LOGOS_CENTER_V9 -->
+  <!-- GIGA_ICON_ONLY_V8 -->
+  <!-- GIGA_LOGO_ROW_V7 -->
+  <!-- GIGA_CAT_CARD_ONLY_MODE_V4 -->
+  <!-- GIGA_CAT_MINIMAL_MODE_V3 -->
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar" id="topbar" style="display:none !important;">
+    <a class="brand" href="#top" aria-label="GIGA CAT home">GIGA CAT</a>
+    <nav class="nav" hidden>
+      <a href="#story">Story</a>
+      <a href="#life">Life</a>
+      <a href="#memes">Memes</a>
+    </nav>
+    <a class="pill pill-small" id="topBuy" href="#buy">Buy</a>
+  </header>
+
+  <main>
+    <section class="hero" id="top" hidden style="display:none !important;">
+      <img class="hero-media" src="assets/dik-drive.png" alt="GIGA CAT, the muscular orange and white cat" />
+      <div class="hero-shade"></div>
+      <div class="hero-copy reveal">
+        <div class="eyebrow">THE STRONGEST CAT ON SOLANA</div>
+        <h1>GIGA</h1>
+        <p class="tagline" id="heroTagline">Small cat. Big power.</p>
+        <p class="subline" id="heroSubline">Meet GIGA CAT — built different and impossible to ignore.</p>
+        <div class="hero-actions">
+          <a class="pill" id="pumpButton" href="#buy">BUY ON PUMP.FUN</a>
+          <button class="pill pill-ghost" id="copyButton" type="button">COPY CA</button>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#story" aria-label="Scroll to story">SCROLL <span>↓</span></a>
+    </section>
+
+    <section class="story section" id="story" hidden style="display:none !important;">
+      <div class="section-kicker">WHO IS GIGA CAT?</div>
+      <div class="story-grid">
+        <h2 class="reveal">He’s calm.<br>He’s huge.<br>That’s enough.</h2>
+        <div class="story-copy reveal">
+          <p>GIGA CAT is the cat that skipped cute and went straight to maximum power. Heavy paws. Zero fear. Main-character energy everywhere he goes.</p>
+          <p>No complicated lore. No fake destiny. Just a cat built different.</p>
+        </div>
+      </div>
+      <div class="portrait-card reveal tilt-card">
+        <img src="assets/dik-original.png" alt="GIGA CAT character portrait" loading="lazy" />
+        <span>ORIGINAL GIGA CAT</span>
+      </div>
+    </section>
+
+    <section class="life section" id="life" hidden style="display:none !important;">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">THE LIFE OF GIGA CAT</div>
+          <h2>Same cat.<br>More power.</h2>
+        </div>
+        <p>Swipe it. Meme it. Post it.</p>
+      </div>
+
+      <div class="life-track" id="lifeTrack">
+        <article class="scene-card">
+          <img src="assets/dik-casino.png" alt="GIGA CAT sitting like a king on a throne" loading="lazy" />
+          <div class="scene-meta"><span>01</span><strong>KING GIGA</strong><em>ON TOP</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-morning.png" alt="GIGA CAT in a trading command center" loading="lazy" />
+          <div class="scene-meta"><span>02</span><strong>TRADER GIGA</strong><em>LOCKED IN</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-gym.png" alt="GIGA CAT flexing in the gym" loading="lazy" />
+          <div class="scene-meta"><span>03</span><strong>GYM GIGA</strong><em>BUILT DIFFERENT</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-beach.png" alt="GIGA CAT walking through the city at night" loading="lazy" />
+          <div class="scene-meta"><span>04</span><strong>STREET GIGA</strong><em>NO FEAR</em></div>
+        </article>
+        <article class="scene-card">
+          <img src="assets/dik-penthouse.png" alt="GIGA CAT standing powerful and unbothered" loading="lazy" />
+          <div class="scene-meta"><span>05</span><strong>BOSS GIGA</strong><em>UNBOTHERED</em></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="meme-banner" id="memes" hidden style="display:none !important;">
+      <div class="meme-copy reveal">
+        <div class="section-kicker">MEME ENGINE</div>
+        <h2>Put GIGA CAT<br>anywhere.</h2>
+        <p>Gyms. Markets. Streets. Cars. Space. Monday mornings. Same face. Same power.</p>
+      </div>
+      <div class="meme-collage reveal">
+        <img src="assets/dik-drive.png" alt="GIGA CAT in the city" loading="lazy" />
+        <img src="assets/dik-gym.png" alt="GIGA CAT at the gym" loading="lazy" />
+        <img src="assets/dik-morning.png" alt="GIGA CAT trading" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="buy section" id="buy">
+      <div class="buy-panel reveal" style="background:linear-gradient(rgba(7,7,7,.72),rgba(7,7,7,.90)),url('assets/dik-original.png') center/cover no-repeat;">
+        <div class="coin-mark" style="overflow:hidden;padding:0;background:#0b0b0d;"><img src="assets/giga-original-photo.jpg" alt="GIGA CAT original photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" /></div>
+        <div>
+          <div class="ecosystem-row official-brand-row" aria-label="ecosystem links">
+  <a class="brand-logo-link solana-logo-link"
+     href="https://solana.com"
+     target="_blank" rel="noreferrer"
+     aria-label="Solana">
+    <img src="https://solana.com/src/img/branding/solanaLogoMark.svg"
+         alt="Solana" class="brand-logo brand-logo-solana" />
+  </a>
+
+  <a class="brand-logo-link pump-logo-link"
+     href="https://pump.fun/coin/2jcvq8QcJ8TzEYJKYMCjR61kXVSzib4mEkz89tQxpump"
+     target="_blank" rel="noreferrer"
+     aria-label="Pump.fun">
+    <img src="https://pump.fun/pump-logomark.svg"
+         alt="Pump.fun" class="brand-logo brand-logo-pump" />
+  </a>
+
+  <a class="brand-logo-link dex-logo-link"
+     href="https://dexscreener.com/solana/72tZoSAHAutvD7dP2fNC56aASLxbPXro9jBPohZ8aAvY"
+     target="_blank" rel="noreferrer"
+     aria-label="DexScreener">
+    <img src="https://github.com/dexscreener.png?size=128"
+         alt="DexScreener" class="brand-logo brand-logo-dex" />
+  </a>
+
+  <a class="brand-logo-link x-logo-link"
+     href="https://x.com/i/communities/2039446188739489972"
+     target="_blank" rel="noreferrer"
+     aria-label="X">
+    <img src="https://about.x.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png"
+         alt="X" class="brand-logo brand-logo-x" />
+  </a>
+</div>
+          <h2>Find $GigaCat<br>on Pump.fun.</h2>
+        </div>
+        <div class="buy-actions">
+          <a class="pill" id="pumpButtonBottom" href="#">OPEN PUMP.FUN</a>
+          <button class="contract" id="contractButton" type="button">
+            <span class="contract-label">CONTRACT</span>
+            <span class="contract-value" id="contractValue">PASTE CONTRACT ADDRESS</span>
+            <span class="contract-copy">COPY</span>
+          </button>
+          <div class="social-row">
+            <a id="xLink" href="#">X / TWITTER</a>
+            <a id="dexLink" href="#">DEXSCREENER</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer hidden style="display:none !important;">
+    <div class="footer-brand">GIGA CAT</div>
+    <div class="footer-copy">A meme character on Solana. No promises. No utility claims. No financial guarantees.</div>
+    <div class="footer-year" id="year"></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied.</div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
