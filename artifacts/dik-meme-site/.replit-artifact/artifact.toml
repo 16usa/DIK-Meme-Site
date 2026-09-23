@@ -1,8 +1,8 @@
 kind = "web"
 previewPath = "/"
-title = "DIK Meme Site"
-description = "A self-contained DIK meme character landing page served by its included dependency-free Node server."
-version = "1.0.0"
+title = "GIGA CAT"
+description = "GIGA CAT landing page"
+version = "1.0.1"
 id = "artifacts/dik-meme-site"
 router = "path"
 
@@ -17,7 +17,7 @@ run = "pnpm --filter @workspace/dik-meme-site run dev"
 [services.production]
 build = [ "pnpm", "--filter", "@workspace/dik-meme-site", "run", "build" ]
 serve = "static"
-publicDir = "artifacts/dik-meme-site/dist/public"
+publicDir = "artifacts/dik-meme-site/site"
 
 [[services.production.rewrites]]
 from = "/*"
